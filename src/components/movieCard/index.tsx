@@ -1,5 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 
+import { Card, CardContent } from "../ui/card";
+
 interface MovieCardProps {
   imdbID: string;
   Poster: string;

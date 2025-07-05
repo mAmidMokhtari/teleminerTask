@@ -2,6 +2,9 @@ import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
 import useMovieStore from "../../store/useMovieStore";
 
 export default function LoginPage() {
@@ -50,14 +53,14 @@ export default function LoginPage() {
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <input
+          <Input
             type="text"
             placeholder="Username"
             className="px-3 py-2 border rounded w-full"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <input
+          <Input
             type="password"
             placeholder="Password"
             className="px-3 py-2 border rounded w-full"
@@ -67,31 +70,31 @@ export default function LoginPage() {
 
           {error && <p className="text-red-500 text-sm">{error}</p>}
 
-          <button type="submit" className="w-full btn btn-primary">
+          <Button type="submit" className="w-full btn btn-primary">
             {isRegistering ? "Register" : "Login"}
-          </button>
+          </Button>
         </form>
 
         <div className="mt-4 text-sm text-center">
           {isRegistering ? (
             <>
               Already have an account?{" "}
-              <button
+              <Button
                 onClick={() => setIsRegistering(false)}
                 className="text-blue-500 underline"
               >
                 Login
-              </button>
+              </Button>
             </>
           ) : (
             <>
               Don’t have an account?{" "}
-              <button
+              <Button
                 onClick={() => setIsRegistering(true)}
                 className="text-blue-500 underline"
               >
                 Register
-              </button>
+              </Button>
             </>
           )}
         </div>

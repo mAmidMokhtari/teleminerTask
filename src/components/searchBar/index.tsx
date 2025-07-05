@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useDebounce } from "../../hooks/useDebounce";
 import useMovieStore from "../../store/useMovieStore";
+import { Input } from "../ui/input";
 
 export default function SearchBar() {
   const { setSearch } = useMovieStore();

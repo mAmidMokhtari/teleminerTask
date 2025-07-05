@@ -7,7 +7,7 @@ export const fetchMovies = async (search: string, page: number = 1) => {
   const response = await axios.get(BASE_URL, {
     params: {
       apikey: API_KEY,
-      s: search,
+      s: search ?? "game",
       page,
     },
   });

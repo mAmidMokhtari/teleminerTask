@@ -1,5 +1,7 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchMovieDetail } from "../../services/api";
@@ -23,7 +25,12 @@ export default function MovieDetail() {
     );
 
   return (
-    <div className="mx-auto px-4 py-8 container">
+    <div className="flex flex-col gap-2 mx-auto px-4 py-8 container">
+      <Link to={"/"}>
+        <Button type="button" className="btn btn-primary">
+          back
+        </Button>
+      </Link>
       <Card className="flex md:flex-row flex-col gap-6 p-6">
         <img
           src={data?.Poster !== "N/A" ? data?.Poster : "/placeholder.png"}

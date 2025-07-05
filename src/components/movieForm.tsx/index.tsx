@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
+import type { IMovie } from "@/hooks/useMovies";
+
 import useMovieStore from "../../store/useMovieStore";
 
 interface MovieFormProps {
-  movieToEdit?: any;
+  movieToEdit?: IMovie | null;
   onClose: () => void;
 }
 

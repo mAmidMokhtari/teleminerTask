@@ -1,20 +1,21 @@
 import useMovieStore from "../../store/useMovieStore";
+import { Button } from "../ui/button";
 
 export default function GenreFilter() {
   const { genres, selectedGenre, setSelectedGenre } = useMovieStore();
 
   return (
     <div className="flex flex-wrap gap-2 my-4">
-      <button
+      <Button
         className={`btn ${
           selectedGenre === null ? "btn-primary" : "btn-outline"
         }`}
         onClick={() => setSelectedGenre(null)}
       >
         All
-      </button>
+      </Button>
       {genres.map((genre) => (
-        <button
+        <Button
           key={genre}
           className={`btn ${
             selectedGenre === genre ? "btn-primary" : "btn-outline"
@@ -22,7 +23,7 @@ export default function GenreFilter() {
           onClick={() => setSelectedGenre(genre)}
         >
           {genre}
-        </button>
+        </Button>
       ))}
     </div>
   );

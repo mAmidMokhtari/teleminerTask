@@ -32,7 +32,7 @@ interface MovieState {
 }
 
 const useMovieStore = create<MovieState>((set) => ({
-  search: "",
+  search: "old",
   setSearch: (s) => set({ search: s, page: 1 }),
   page: 1,
   setPage: (p) => set({ page: p }),
