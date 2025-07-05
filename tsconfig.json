@@ -4,7 +4,7 @@
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -17,7 +17,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./*"]
     }
