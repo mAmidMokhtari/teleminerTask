@@ -1,5 +1,7 @@
 # Movie Search App 🎬
 
+🔗 **Live Demo**: [movie-three-phi.vercel.app](https://movie-three-phi.vercel.app/)
+
 A modern and responsive movie search application built with React, Zustand, and React Query, allowing users to search, view detailed information, and manage movies seamlessly.
 
 ---
@@ -16,7 +18,7 @@ A modern and responsive movie search application built with React, Zustand, and 
 - Data fetching, caching, and synchronization with React Query
 - Client-side routing with React Router DOM
 - Dockerized for easy local development and deployment
-- Ready for seamless deployment on Vercel
+- Already deployed and optimized for Vercel
 
 ---
 
@@ -31,7 +33,7 @@ A modern and responsive movie search application built with React, Zustand, and 
 ### Local Setup and Development
 
 ```bash
-git clone https://github.com/yourusername/movie-search-app.git
+git clone https://github.com/mAmidMokhtari/teleminerTask
 cd movie-search-app
 npm install
 npm run dev
