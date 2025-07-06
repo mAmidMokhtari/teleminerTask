@@ -8,11 +8,11 @@ export const MovieList = () => {
   const data = useData();
 
   return (
-    <div className="container m-auto space-y-4">
+    <div className="space-y-4 m-auto container">
       <h1 className="font-bold text-3xl">Movie Explorer</h1>
 
-      <div className="flex gap-2 mb-4 flex-wrap">
-        <SearchBar className="h-10 flex-1" />
+      <div className="flex flex-wrap gap-2 mb-4">
+        <SearchBar className="flex-1 h-10" />
 
         <MultiSelect
           options={data.genreOptions}
@@ -26,7 +26,7 @@ export const MovieList = () => {
       </div>
 
       {data.isLoading && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-6">
+        <div className="gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-6">
           {Array.from({ length: 10 }).map((_, i) => (
             <MovieCardSkeleton key={i} />
           ))}
@@ -52,7 +52,8 @@ export const MovieList = () => {
                   style={{
                     borderBottom: "1px solid #ddd",
                     padding: "10px 0",
-                  }}>
+                  }}
+                >
                   {movieCard}
                 </div>
               );
