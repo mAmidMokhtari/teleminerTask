@@ -1,42 +1,35 @@
 import { Link, useNavigate } from "react-router-dom";
 
+import type { Movie } from "@/model";
+
 import { Card, CardContent } from "../ui/card";
 
-interface MovieCardProps {
-  imdbID: string;
-  Poster: string;
-  Title: string;
-  Year: string;
-  Type: string;
-}
+export type MovieCardProps = {
+  movie?: Movie;
+};
 
-export default function MovieCard({
-  imdbID,
-  Poster,
-  Title,
-  Year,
-  Type,
-}: MovieCardProps) {
+export const MovieCard = ({ movie }: MovieCardProps) => {
   const navigate = useNavigate();
 
   return (
     <Card
-      onClick={() => navigate(`/movie/${imdbID}`)}
-      className="bg-muted hover:shadow-lg border border-border rounded-2xl w-full max-w-xs overflow-hidden transition cursor-pointer"
-    >
-      <Link to={`/movie/${imdbID}`}>
+      onClick={() => navigate(`/movie/${movie?.getId()}`)}
+      className="py-0 bg-muted hover:shadow-lg border border-border rounded-2xl w-full sm:max-w-xs overflow-hidden transition cursor-pointer">
+      <Link to={`/movie/${movie?.getId()}`}>
         <img
-          src={Poster !== "N/A" ? Poster : "/placeholder.png"}
-          alt={Title}
-          className="w-full h-72 object-cover"
+          src={import.meta.env.VITE_BASE_IMAGE_URL + movie?.getPoster()}
+          alt={movie?.getTitle()}
+          className="w-full h-48 object-cover"
         />
         <CardContent className="space-y-2 p-4">
-          <h3 className="font-semibold text-lg truncate">{Title}</h3>
-          <p className="text-muted-foreground text-sm">
-            {Year} • {Type}
+          <h3 className="font-semibold text-lg truncate">
+            {movie?.getTitle()}
+          </h3>
+          <p className="text-muted-foreground text-sm truncate-multiline">
+            {movie?.getOverview()}
           </p>
         </CardContent>
       </Link>
     </Card>
   );
-}
+};

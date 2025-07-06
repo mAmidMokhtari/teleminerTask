@@ -1,4 +1,4 @@
-export default function SkeletonMovieCard() {
+export const MovieCardSkeleton = () => {
   return (
     <div className="bg-gray-300 rounded-md w-full h-64 animate-pulse">
       <div className="bg-gray-400 mb-4 rounded w-full h-40"></div>
@@ -6,4 +6,4 @@ export default function SkeletonMovieCard() {
       <div className="bg-gray-400 rounded w-1/2 h-4"></div>
     </div>
   );
-}
+};
