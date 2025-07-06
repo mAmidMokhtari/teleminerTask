@@ -15,8 +15,6 @@ A modern and responsive movie search application built with React, Zustand, and 
 - State management with Zustand
 - Data fetching, caching, and synchronization with React Query
 - Client-side routing with React Router DOM
-- CRUD operations for custom movies (Add, Edit, Delete)
-- Simple client-side authentication with registration and login using localStorage
 - Dockerized for easy local development and deployment
 - Ready for seamless deployment on Vercel
 
